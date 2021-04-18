@@ -160,4 +160,214 @@ print(X_train.shape, X_test.shape)
 2. output- (5000, 3072) (500, 3072) 3072 = 32*32*3
 3. that's means  np.reshape(X_train, (X_train.shape[0], -1)) this converts the 32*32*3 photo to a column of 3072
 4. About np.reshape - https://numpy.org/doc/stable/reference/generated/numpy.reshape.html
- 
+
+```
+from cs231n.classifiers import KNearestNeighbor
+
+# Create a kNN classifier instance. 
+# Remember that training a kNN classifier is a noop: 
+# the Classifier simply remembers the data and does no further processing 
+classifier = KNearestNeighbor()
+classifier.train(X_train, y_train)
+```
+Self explanatory
+
+## Distance Computation
+Note :- This is knn.ipynb note so external reference is in their respective files
+
+```
+# Open cs231n/classifiers/k_nearest_neighbor.py and implement
+# compute_distances_two_loops.
+
+# Test your implementation:
+dists = classifier.compute_distances_two_loops(X_test)
+print(dists.shape)
+```
+
+Computes the distances using 2 loops
+
+
+```
+# We can visualize the distance matrix: each row is a single test example and
+# its distances to training examples
+plt.imshow(dists, interpolation='none')
+plt.show()
+```
+
+plt.imshow - https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.imshow.html
+
+```
+# Now implement the function predict_labels and run the code below:
+# We use k = 1 (which is Nearest Neighbor).
+y_test_pred = classifier.predict_labels(dists, k=1)
+
+# Compute and print the fraction of correctly predicted examples
+num_correct = np.sum(y_test_pred == y_test)
+accuracy = float(num_correct) / num_test
+print('Got %d / %d correct => accuracy: %f' % (num_correct, num_test, accuracy))
+```
+num_correct = np.sum(y_test_pred == y_test) -> sums over all the value whose y_test_pred == y_test
+
+```
+y_test_pred = classifier.predict_labels(dists, k=5)
+num_correct = np.sum(y_test_pred == y_test)
+accuracy = float(num_correct) / num_test
+print('Got %d / %d correct => accuracy: %f' % (num_correct, num_test, accuracy))
+```
+
+```
+# Now lets speed up distance matrix computation by using partial vectorization
+# with one loop. Implement the function compute_distances_one_loop and run the
+# code below:
+dists_one = classifier.compute_distances_one_loop(X_test)
+
+# To ensure that our vectorized implementation is correct, we make sure that it
+# agrees with the naive implementation. There are many ways to decide whether
+# two matrices are similar; one of the simplest is the Frobenius norm. In case
+# you haven't seen it before, the Frobenius norm of two matrices is the square
+# root of the squared sum of differences of all elements; in other words, reshape
+# the matrices into vectors and compute the Euclidean distance between them.
+difference = np.linalg.norm(dists - dists_one, ord='fro')
+print('One loop difference was: %f' % (difference, ))
+if difference < 0.001:
+    print('Good! The distance matrices are the same')
+else:
+    print('Uh-oh! The distance matrices are different')
+
+
+# Now implement the fully vectorized version inside compute_distances_no_loops
+# and run the code
+dists_two = classifier.compute_distances_no_loops(X_test)
+
+# check that the distance matrix agrees with the one we computed before:
+difference = np.linalg.norm(dists - dists_two, ord='fro')
+print('No loop difference was: %f' % (difference, ))
+if difference < 0.001:
+    print('Good! The distance matrices are the same')
+else:
+    print('Uh-oh! The distance matrices are different')
+
+```
+
+1. np.linalg.norm -> https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html
+This function is able to return one of eight different matrix norms, or one of an infinite number of vector norms (described below), depending on the value of the ord parameter.
+
+```
+# Let's compare how fast the implementations are
+def time_function(f, *args):
+    """
+    Call a function f with args and return the time (in seconds) that it took to execute.
+    """
+    import time
+    tic = time.time()
+    f(*args)
+    toc = time.time()
+    return toc - tic
+
+two_loop_time = time_function(classifier.compute_distances_two_loops, X_test)
+print('Two loop version took %f seconds' % two_loop_time)
+
+one_loop_time = time_function(classifier.compute_distances_one_loop, X_test)
+print('One loop version took %f seconds' % one_loop_time)
+
+no_loop_time = time_function(classifier.compute_distances_no_loops, X_test)
+print('No loop version took %f seconds' % no_loop_time)
+
+# You should see significantly faster performance with the fully vectorized implementation!
+
+# NOTE: depending on what machine you're using, 
+# you might not see a speedup when you go from two loops to one loop, 
+# and might even see a slow-down.
+```
+
+1. If we look at the time_fuction 
+inside the time func f is the fuction and *args is many argument so it calls f(*args) which is the function call for the parameter we send in time_function ugh T_T i made it more confusing , Just follow the function calls
+
+## Cross-validation
+```
+num_folds = 5
+k_choices = [1, 3, 5, 8, 10, 12, 15, 20, 50, 100]
+
+X_train_folds = []
+y_train_folds = []
+################################################################################
+# TODO:                                                                        #
+# Split up the training data into folds. After splitting, X_train_folds and    #
+# y_train_folds should each be lists of length num_folds, where                #
+# y_train_folds[i] is the label vector for the points in X_train_folds[i].     #
+# Hint: Look up the numpy array_split function.                                #
+################################################################################
+# *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+
+X_train_folds = np.array_split(X_train, num_folds)
+y_train_folds = np.array_split(y_train, num_folds)
+
+# *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+
+# A dictionary holding the accuracies for different values of k that we find
+# when running cross-validation. After running cross-vali`dation,
+# k_to_accuracies[k] should be a list of length num_folds giving the different
+# accuracy values that we found when using that value of k.
+k_to_accuracies = {}
+
+
+################################################################################
+# TODO:                                                                        #
+# Perform k-fold cross validation to find the best value of k. For each        #
+# possible value of k, run the k-nearest-neighbor algorithm num_folds times,   #
+# where in each case you use all but one of the folds as training data and the #
+# last fold as a validation set. Store the accuracies for all fold and all     #
+# values of k in the k_to_accuracies dictionary.                               #
+################################################################################
+# *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+```
+this code is self explanatory
+
+```
+for k in k_choices:
+  k_to_accuracies[k] = []
+  for i in range(num_folds):
+    #Prepare training data
+    X_train_f = np.concatenate([fold for j,fold in enumerate(X_train_folds) if i!=j ]) 
+    y_train_f = np.concatenate([fold for j,fold in enumerate(y_train_folds) if i!=j ]) 
+
+    #Training the data
+    classifier.train(X_train_f, y_train_f)
+    y_test_pred = classifier.predict(X_train_folds[i], k=k)
+
+    # Compute and print the fraction of correctly predicted examples
+    num_correct = np.sum(y_test_pred == y_train_folds[i])
+    #alternate for the line below
+    #accuracy = float(num_correct) / X_train_folds[i].shape[0]
+    accuracy = float(num_correct) / len(y_train_folds[i])
+    k_to_accuracies[k].append(accuracy)
+
+# *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+
+# Print out the computed accuracies
+for k in sorted(k_to_accuracies):
+    for accuracy in k_to_accuracies[k]:
+        print('k = %d, accuracy = %f' % (k, accuracy))
+```
+Also self explanatory if follow along the code
+
+```
+# plot the raw observations
+for k in k_choices:
+    accuracies = k_to_accuracies[k]
+    plt.scatter([k] * len(accuracies), accuracies)
+```
+plt.scatter - https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html
+
+```
+# plot the trend line with error bars that correspond to standard deviation
+accuracies_mean = np.array([np.mean(v) for k,v in sorted(k_to_accuracies.items())])
+accuracies_std = np.array([np.std(v) for k,v in sorted(k_to_accuracies.items())])
+plt.errorbar(k_choices, accuracies_mean, yerr=accuracies_std)
+plt.title('Cross-validation on k')
+plt.xlabel('k')
+plt.ylabel('Cross-validation accuracy')
+plt.show()
+```
+Don't understand the above will update later
+
