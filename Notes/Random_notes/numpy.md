@@ -161,7 +161,7 @@ eg -  b[:, 0, :]
 
 ### All 0s matrix
 ```
-np.zeroes((2,3,3))
+np.zeros((2,3,3))
 ```
 Forms a 3 dimensional array
 
@@ -195,3 +195,95 @@ np.random.random_sample(a.shape)
 np.random.randint(7, size=(3,3))
 
 ![Failed to upload](./images/numpy/img9.JPG)
+
+![Failed to upload](./images/numpy/img10.JPG)
+
+### The Identity matrix
+```
+np.identity(5)
+```
+
+### Repeat an array
+
+![Failed to upload](./images/numpy/img11.JPG)
+
+![Failed to upload](./images/numpy/img12.JPG)
+
+### Activity
+
+![Failed to upload](./images/numpy/img13.JPG)
+
+```
+import numpy as np
+a = np.ones((5,5), dtype='int16')
+b= np.zeros((3,3), dtype='int16')
+b[1,1] = 9
+a[1:4,1:4] = b
+print(a)
+```
+
+a[1:4, 1:4] can also be written as a[1:-1, 1:-1]
+
+### Becarful when copying arrays!!
+
+![Failed to upload](./images/numpy/img14.JPG)
+
+here if we change b, a will change too because a and b are pointing to the same memory block , a and b are just pointers
+
+To solve this problem we can use 
+
+![Failed to upload](./images/numpy/img15.JPG)
+
+## Mathematics
+```
+a+2
+```
+adds 2 to each element
+
+Can do operations +,-,/,*,**
+
+```
+a+b
+```
+
+### Take sin of all values
+```
+np.sin(a)
+```
+
+![Failed to upload](./images/numpy/img16.JPG)
+
+## Linear Algebra
+a -> (2,3)
+b -> (3,2)
+
+Here a*b will not work because they are not same size
+
+#### Instead can use matrix multiplication
+```
+np.matmul(a,b)
+```
+
+### Find the determinant
+```
+c= np.identity(3)
+np.linalg.det(c)
+```
+![Failed to upload](./images/numpy/img17.JPG)
+
+## Satistics
+```
+np.min(a)
+np.min(a, axis=0)
+np.min(a, axis=1)
+```
+
+```
+np.max(a)
+np.max(a, axis=0)
+np.max(a, axis=1)
+```
+
+```
+np.sum(a)
+```
