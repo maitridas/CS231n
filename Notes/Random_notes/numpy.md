@@ -331,3 +331,9 @@ np.any(a>50, axis=0) returns true if their is any value which is greater than 50
 np.all(a>50, axis=0) returns true if all the values in the column is greater than 50 in the columns else false
 
 ![Failed to upload](./images/numpy/img27.JPG)
+
+![Failed to upload](./images/numpy/img28.JPG)
+
+## Question
+
+![Failed to upload](./images/numpy/img29.JPG)
