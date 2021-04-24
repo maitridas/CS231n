@@ -67,3 +67,128 @@ print(a)
 output - [1 2 3]
 
 ![Failed to upload](./images/numpy/img6.JPG)
+
+### Get Dimension
+```
+a.ndim
+```
+output - 1
+
+### Get Shape
+```
+b.shape
+```
+output - (2,3)
+
+### Get type
+```
+a.dtype
+```
+output - dtype('int32')
+
+### if we want to specify what type of dtype then -
+```
+a = np.array([1,2,3], dtype = 'int16')
+a.dtype
+```
+output - dtype('int16')
+
+### Get memory size
+```
+a.itemsize
+```
+output - for int32 - 4
+         for int16 - 2 
+
+### Get total size
+```
+a.size*a.itemsize
+```
+or
+```
+a.nbytes
+```
+
+## Accessing/changing specific elements, rows, columns, etc
+
+### Get a specific element [r,c]
+```
+a[1,5]
+```
+numpy array index starts from 0
+a.shape -> (2,7)
+We can also do
+```
+a[1,-2]
+```
+
+### Get a specific row
+a[0, :]
+
+### Get a specific column
+a[:, 2]
+
+### Getting a little more fancy [startindex:endindex:stepsize]
+```
+a[0, 1:6:2]
+```
+prints all element in row 0 starting from index 1 to index 5 in a step of 2
+
+```
+a[0, 1:6:-2]
+```
+this does not work because the steps goes backward and no end point so gives error
+
+```
+a[0, 1:-1:2]
+```
+can be used as an alternative
+
+### Change something
+```
+a[1,5] = 20
+a[:,2] = [1,2]
+```
+
+### 3-d example
+![Failed to upload](./images/numpy/img7.JPG)
+eg -  b[:, 0, :]
+![Failed to upload](./images/numpy/img8.JPG)
+
+## Initializing Different Types of Arrays
+
+### All 0s matrix
+```
+np.zeroes((2,3,3))
+```
+Forms a 3 dimensional array
+
+### All 1s matrix
+```
+np.ones((4,2), dtype='int32')
+```
+
+### Any other number
+```
+np.full((2,2), 99, dtype= 'float32')
+```
+forms an 2x2 array with only 99
+
+### Any other number (full_like)
+```
+np.full(a, 4)
+```
+makes an array of shape a with all element value equals to 4
+
+### Random decimal numbers
+```
+np.random.rand(2,4)
+```
+or
+```
+np.random.random_sample(a.shape)
+```
+
+### Random Integer values
+np.random.randint(7, size=(3,3))
+![Failed to upload](./images/numpy/img9.JPG)
