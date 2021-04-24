@@ -154,6 +154,7 @@ a[:,2] = [1,2]
 ![Failed to upload](./images/numpy/img7.JPG)
 
 eg -  b[:, 0, :]
+
 ![Failed to upload](./images/numpy/img8.JPG)
 
 ## Initializing Different Types of Arrays
