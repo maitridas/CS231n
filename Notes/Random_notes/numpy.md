@@ -152,6 +152,7 @@ a[:,2] = [1,2]
 
 ### 3-d example
 ![Failed to upload](./images/numpy/img7.JPG)
+
 eg -  b[:, 0, :]
 ![Failed to upload](./images/numpy/img8.JPG)
 
@@ -191,4 +192,5 @@ np.random.random_sample(a.shape)
 
 ### Random Integer values
 np.random.randint(7, size=(3,3))
+
 ![Failed to upload](./images/numpy/img9.JPG)
