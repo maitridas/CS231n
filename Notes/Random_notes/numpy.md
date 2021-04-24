@@ -1,3 +1,3 @@
 ## What is Numpy?
 Can use numpy to store data in multi-dimensional array
-(images\Capture.jpg)
+|![sucess](./images/Capture.jpg)|
