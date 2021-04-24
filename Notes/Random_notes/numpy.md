@@ -287,3 +287,47 @@ np.max(a, axis=1)
 ```
 np.sum(a)
 ```
+
+## Reorganizing Arrays
+
+### Reshaping Array
+
+![Failed to upload](./images/numpy/img18.JPG)
+
+This will work as long as the shape we are trying to reshape the array into has the same quantity of elements
+For example - (4,2)= 4*2 =8 elements it can be reshaped into (8,1),(1,8),(2,4),(2,2,2)
+it will not work for (2,3)
+
+### Vertically Stacking vectors
+![Failed to upload](./images/numpy/img19.JPG)
+
+![Failed to upload](./images/numpy/img20.JPG)
+
+### Horizontal stacking vectors
+![Failed to upload](./images/numpy/img21.JPG)
+
+## Load Data from File
+
+Notes-
+```
+a.astype('int16')
+```
+astype copies all the data to whatever format we want
+
+![Failed to upload](./images/numpy/img22.JPG)
+
+## Boolean Masking and Advanced Indexing
+
+![Failed to upload](./images/numpy/img23.JPG)
+
+![Failed to upload](./images/numpy/img24.JPG)
+
+![Failed to upload](./images/numpy/img25.JPG)
+
+np.any(a>50, axis=0) returns true if their is any value which is greater than 50 in the columns
+
+![Failed to upload](./images/numpy/img26.JPG)
+
+np.all(a>50, axis=0) returns true if all the values in the column is greater than 50 in the columns else false
+
+![Failed to upload](./images/numpy/img27.JPG)
