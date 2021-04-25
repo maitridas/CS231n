@@ -86,3 +86,43 @@ print(monthConversions.get("Luv", "Not a valid key")) -> we can set a default va
 ## Comments
 '#' or ''' dsdf'''
 
+## Try and except
+```
+try:
+    blah blah i mean write the code here!
+except ZeroDivisionError as err:
+    print("Divided by xero")
+    print(err)
+except:
+    print("invalid input")
+```
+Best Practice is except the specific errors
+
+## Reading From Files
+file = open("file.txt", "r") -> r stands for read, w is for write, a stands for append info at the end of the file you can't change anything in the file in this mode but can add new info, r+ is read and write
+
+- file.readable() -> returns a boolean value tells whether or not we can read from the file
+
+- file.read() -> gives all the file content
+
+- file.readline() -> reads a line from the file
+
+- file.readlines() -> this takes all the lines in the file and puts it in an array or list
+
+file.close()
+
+## Writing in file
+file = open("file.txt", "a")
+
+- file.write("yo") -> writes in the end of the file in a mode in w mode it replaces all the file content with yo, it creates another file if file name doesn't exist
+
+file.close()
+
+## Modules and Pip
+Module is just a python file that we can import in our current python file
+
+![failed to upload](./images/python/img4.JPG)
+
+Some useful phython modules-
+
+![failed to upload](./images/python/img5.JPG)
