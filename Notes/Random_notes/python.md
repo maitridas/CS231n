@@ -1,4 +1,6 @@
-Source - freeCodeCamp - https://www.youtube.com/watch?v=rfscVS0vtbw&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1
+Source - freeCodeCamp 
+- https://www.youtube.com/watch?v=rfscVS0vtbw&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1
+- https://www.youtube.com/watch?v=HGOBQPFzWKo&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&index=2
 
 # Python for beginners
 
@@ -70,10 +72,22 @@ a = []
     - a[::1] goes from beginning to the end with step 1
     - a[::-1] -> nice trick to reverse a list
 
+#### List comprehensions
+- b = [i*i for i in a]
+
 ## Tuples
+```
+Tuple: ordered, immutable, allows duplicate element
+```
 a = (0,9)
 a[0] and a[1] gives 0 and 9
 Tuples can't be change its immutable it can't handle value assignment
+a = ("hi",9,0,6)
+a = "hi",9,0,6
+a = ("hi") -> not a tuple
+a = ("hi", ) -> a tuple
+a = tuple(["hi",9,0,6])
+
 
 ## Functions
 ```
