@@ -299,3 +299,106 @@ A python interpreter can be used for test out same codes just write python in co
 ```
 collections: Counter, namedtuple, OrderedDict, defaultdict, deque
 ```
+### Counter
+
+![failed to upload](./images/python/img12.JPG)
+
+![failed to upload](./images/python/img13.JPG)
+
+returns a dictionary, list, tuple according to the method used
+
+- my_Counter.items() -> returns dictionary
+- my_Counter.keys() -> returns dictionary
+- my_Counter.values() -> returns dictionary
+- my_Counter.most_common(1) -> gives ('a',5) returns a list with tuples in it
+- my_Counter.most_common(1)[0][0] -> returns 'a'
+- my_counter.elements() -> gives an iterable of elements repeating each elements as many times it counts
+- list(my_counter.elements()) -> gives a list of all elements
+
+### namedtuple
+
+easy to create and light weight object type similar to a struct
+
+![failed to upload](./images/python/img14.JPG)
+
+creates a class Point with values x and y
+
+### OrderedDict
+ordereddict are normal dict except they remember the order in which items were inserted
+
+this is not that important in new python version as the dict does the same but can be usefull in older version before 3.7
+
+![failed to upload](./images/python/img15.JPG)
+
+![failed to upload](./images/python/img16.JPG)
+
+### DefaultDict
+Its also similar to the original dictionary with the only difference is that it comes with a default value if the key hasn't been set yet 
+
+![failed to upload](./images/python/img17.JPG)
+
+![failed to upload](./images/python/img18.JPG)
+
+### deque pronounced as deck? -_-!! thought it was de - q
+
+deque is a double ended queue 
+
+![failed to upload](./images/python/img19.JPG)
+
+- d.pop() -> right
+- d.popleft()
+- d.clear()
+- d.extend([1, 2, 3]) -> right
+- d.extendleft([4, 5, 6])
+- d.rotate(1) -> shifts or rotates all element 1 place to the right , if want to rotate left give negative integer as argument like -1, -2 etc
+
+## itertools
+
+```
+itertools: product, permutations, combinations, accumulate, groupby, and infinite iterators
+```
+
+it is a collection of tools for handling iterators
+
+interators are datatype that can be used in a for loop
+
+### product
+computes cartesian product of the iterables
+
+![failed to upload](./images/python/img20.JPG)
+
+![failed to upload](./images/python/img21.JPG)
+
+![failed to upload](./images/python/img22.JPG)
+
+![failed to upload](./images/python/img23.JPG)
+
+![failed to upload](./images/python/img24.JPG)
+
+![failed to upload](./images/python/img25.JPG)
+
+### permutations
+returns all possible inputs of an ordering
+
+![failed to upload](./images/python/img26.JPG)
+
+![failed to upload](./images/python/img27.JPG)
+
+![failed to upload](./images/python/img28.JPG)
+
+![failed to upload](./images/python/img29.JPG)
+
+### combinations
+
+![failed to upload](./images/python/img30.JPG)
+
+![failed to upload](./images/python/img31.JPG)
+
+### combinations_with_replacement
+
+![failed to upload](./images/python/img32.JPG)
+
+![failed to upload](./images/python/img33.JPG)
+
+![failed to upload](./images/python/img34.JPG)
+
