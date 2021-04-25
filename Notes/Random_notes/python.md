@@ -402,3 +402,16 @@ returns all possible inputs of an ordering
 
 ![failed to upload](./images/python/img34.JPG)
 
+### accumulate
+makes an iterator that returns accumalated sums
+
+#### Add each element and accumulate
+![failed to upload](./images/python/img35.JPG)
+
+![failed to upload](./images/python/img36.JPG)
+
+#### Multipky each element and accumulate
+![failed to upload](./images/python/img37.JPG)
+
+![failed to upload](./images/python/img38.JPG)
+1:44:36
