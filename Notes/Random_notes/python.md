@@ -72,3 +72,17 @@ sayhi()
 
 ## Dictionaries
 ![failed to upload](./images/python/img1.JPG)
+
+dict = {key:value}
+
+print(monthConversions["Nov"])
+print(monthConversions.get("Luv", "Not a valid key")) -> we can set a default value if the key not found using get function, second argument is the default value
+
+## While Loop
+![failed to upload](./images/python/img2.JPG)
+
+![failed to upload](./images/python/img3.JPG)
+
+## Comments
+'#' or ''' dsdf'''
+
