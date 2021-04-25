@@ -50,6 +50,12 @@ string s = "hello"
 
 ![failed to upload](./images/python/img9.JPG)
 
+![failed to upload](./images/python/img10.JPG)
+
+Fstrings are better faster
+
+![failed to upload](./images/python/img11.JPG)
+
 ## Cool functions for numbers
 - abs(-5) -> returns 5
 - pow(3, 2) -> 3 to the power 2
@@ -288,3 +294,8 @@ class indianchef(chef):
 A python interpreter can be used for test out same codes just write python in command promt or terminal
 
 # Python intermediate
+
+## Collection module
+```
+collections: Counter, namedtuple, OrderedDict, defaultdict, deque
+```
