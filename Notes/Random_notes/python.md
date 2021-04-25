@@ -80,13 +80,16 @@ a = []
 Tuple: ordered, immutable, allows duplicate element
 ```
 a = (0,9)
+
 a[0] and a[1] gives 0 and 9
+
 Tuples can't be change its immutable it can't handle value assignment
-a = ("hi",9,0,6)
-a = "hi",9,0,6
-a = ("hi") -> not a tuple
-a = ("hi", ) -> a tuple
-a = tuple(["hi",9,0,6])
+
+- a = ("hi",9,0,6)
+- a = "hi",9,0,6
+- a = ("hi") -> not a tuple
+- a = ("hi", ) -> a tuple
+- a = tuple(["hi",9,0,6])
 
 
 ## Functions
