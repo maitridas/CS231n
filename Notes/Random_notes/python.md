@@ -34,3 +34,41 @@ string s = "hello"
 - sqrt(36)
 
 ## Getting input from user
+- name = input("Enter your name:")
+
+## Some Cool Lists function
+a and b are lists
+a = []
+- a.extend(b) -> merges a and b 
+- a.append(element) -> inserts element to the end of the list
+- a.insert(1, "Hi") -> inserts hi in index 1 of a
+- a.remove("Hi") -> removes hi from list
+- a.clear() -> gets rid of all element in the list gives an empty list
+- a.pop() -> removes the last element in a
+- a.index("Hi") -> gives the index of "Hi" if exist in list a or will give error
+- a.count("Hi") -> counts the number of times "Hi" shows up in the list
+- a.sort() -> sorts list in ascending order
+- a.reverse() -> reverses the list
+- b= a.copy() -> copies a to b
+
+## Tuples
+a = (0,9)
+a[0] and a[1] gives 0 and 9
+Tuples can't be change its immutable it can't handle value assignment
+
+## Functions
+```
+def <function name>:
+    <function body>
+```
+
+Example
+```
+def sayhi:
+    print("Hi")
+
+sayhi()
+```
+
+## Dictionaries
+![failed to upload](./images/python/img1.JPG)
