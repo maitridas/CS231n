@@ -13,6 +13,7 @@ Not -: By the '+' operator we can only concatanate strings together cannot with 
 
 ## Strings and all cool functions should remember
 ```
+Strings: ordered, immutable, text representation
 string s = "hello"
 ```
 - s.lower() - converts all to lower case
@@ -25,6 +26,29 @@ string s = "hello"
     s.index("lo")
     if we give something that's not in the string then it will give error
 - s.replace("he", "lolol")
+- slicing works the same
+- '+' can be used to concatanate
+- for i in s:
+- if 'w' in s:
+- a = s.strip() -> removes the whitespace 
+- s = s.strip() -> valid
+- s.startswith('Hello') -> returns boolean
+- s.endswith('W') 
+- s.find('o') -> returns index of the first o
+- s.count('o')
+- immutable objects can be reassigned
+- my_list = s.split(" ") -> by default the delimeter is " " we can choose other for delimeter
+- new_string = ' '.join(my_list) -> change list to string 
+- there are two ways to format a string 
+    - % , .format(), f-strings
+
+![failed to upload](./images/python/img6.JPG)
+
+![failed to upload](./images/python/img7.JPG)
+
+![failed to upload](./images/python/img8.JPG)
+
+![failed to upload](./images/python/img9.JPG)
 
 ## Cool functions for numbers
 - abs(-5) -> returns 5
@@ -91,6 +115,25 @@ Tuples can't be change its immutable it can't handle value assignment
 - a = ("hi", ) -> a tuple
 - a = tuple(["hi",9,0,6])
 
+Index logic is same as list -ve indexes also works
+
+```
+for i in a:
+    print(a)
+```
+
+- if "hi" in a:
+    print(yes)
+- len(a) -> gives number of element
+- a.count("hi") -> count the elements if not gives 0
+- a.index("hi") -> return first occurance of the element
+- can easily convert list to a tuple and vice versa with list and tuple fuctions   
+- slicing same as list
+- s,t,w,x = a -> a is a tuple the number of elements in RHS should be equal to LHS
+- or can use s,*t,x = a -> if we just want first and last element in between elements are converted to list
+- import sys
+    sys.getsizeof(a) -> works with list too
+- list is larger than tuple , tuple are more efficient to create and iterate compared to list
 
 ## Functions
 ```
@@ -107,13 +150,64 @@ sayhi()
 ```
 
 ## Dictionaries
+```
+Dictionary: key-value pairs, Unordered, Mutable
+```
+
 ![failed to upload](./images/python/img1.JPG)
 
 dict = {key:value}
 
+my_dict = dict(key:value)
+
 print(monthConversions["Nov"])
 
 print(monthConversions.get("Luv", "Not a valid key")) -> we can set a default value if the key not found using get function, second argument is the default value
+
+- dict.pop("Jan") -> removes the item specified
+- dict.popitem() -> removes the last inserted item
+- if --- in --- : can be used
+- try:
+    print(my_dict["name"])
+  except:
+    print("error")
+- for key in my_dict.keys():
+- for values in my_dict.values():
+- for key,value in my_dict.items():
+- dictc = dict.copy()
+- dict.update(a) -> dict gets overwritten by a
+- lists cannot be used as a key because it is mutable that is can be changed after creation and is not hashable
+
+## Sets
+```
+sets: unordered, mutable, no duplicates
+```
+- myset = {1,2,3,4,3}
+- myset = set("Hello")
+- myset = set() -> empty set
+- myset = {} -> empty dict
+- myset.add() -> adds element
+- myset.remove(4) -> raises keyerror if not element found
+- myset.discard(4) -> unlike remove does not give any error
+- myset.clear() -> empties the set
+- myset.pop() -> returns arbitary value of our set and also returns it
+- for i in myset: pass
+- if elem in myset: pass
+- a = b.union(c)
+- a = b.intersection(c)
+- a = b.difference(c)
+- a = b.symmetric_difference(c) -> return all the elements in set a and set b but not the elements in both sets
+- a.update(b)
+- a.intersection_update(b)
+- a.difference_update(b)
+- a.symmetric_difference_update(b)
+- a.issubset(b) -> returns boolean
+- a.issuperset(b)
+- a.isdisjoint(b)
+- a = b.copy()
+- a = set(b)
+- A frozenset is a immutable version of normal set
+- a = frozenset([1,2,3,4,5])
 
 ## While Loop
 ![failed to upload](./images/python/img2.JPG)
