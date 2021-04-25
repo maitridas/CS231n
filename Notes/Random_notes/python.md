@@ -37,6 +37,11 @@ string s = "hello"
 - name = input("Enter your name:")
 
 ## Some Cool Lists function
+```
+Lists: orderred, mutable, allows duplicable elements
+List allows different data type and duplicate elements
+```
+
 a and b are lists
 a = []
 - a.extend(b) -> merges a and b 
@@ -49,7 +54,21 @@ a = []
 - a.count("Hi") -> counts the number of times "Hi" shows up in the list
 - a.sort() -> sorts list in ascending order
 - a.reverse() -> reverses the list
-- b= a.copy() -> copies a to b
+- b= a.copy() -> a=b copies only the pointers use this instead it copies a to b
+- alternatives for a.copy
+    - b = list(a)
+    - b = a[:]
+- new_list = sorted(my_list) -> creates a new_list out of my list but does not change my_list
+
+#### Usefull tricks
+- mylist = [0]*5 -> creates [0, 0, 0, 0, 0]
+- a+b -> concates two list
+- slicing 
+    - a[1:5]
+    - a[1:]
+    - a[1::2] 2 is the step index by default it is one goes from index 1 to the end with step 2
+    - a[::1] goes from beginning to the end with step 1
+    - a[::-1] -> nice trick to reverse a list
 
 ## Tuples
 a = (0,9)
@@ -126,3 +145,34 @@ Module is just a python file that we can import in our current python file
 Some useful phython modules-
 
 ![failed to upload](./images/python/img5.JPG)
+
+pip is a program
+
+pip install <--->
+pip uninstall <--->
+
+## Classes and Objects
+```
+class student:
+    def __init__(self,name,gpa):
+        self.name = name
+        self.gpa = gpa
+
+stu1 = student("Eren",3.9) --> class object
+
+stu1.name
+stu1.gpa
+```
+
+## Inheritance
+```
+class chef:
+    pass
+
+class indianchef(chef):
+    pass
+```
+
+A python interpreter can be used for test out same codes just write python in command promt or terminal
+
+# Python intermediate
