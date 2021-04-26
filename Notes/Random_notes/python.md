@@ -410,8 +410,49 @@ makes an iterator that returns accumalated sums
 
 ![failed to upload](./images/python/img36.JPG)
 
-#### Multipky each element and accumulate
+#### Multiply each element and accumulate
 ![failed to upload](./images/python/img37.JPG)
 
 ![failed to upload](./images/python/img38.JPG)
-1:44:36
+
+#### accumulate with max operator
+![failed to upload](./images/python/img39.JPG)
+
+![failed to upload](./images/python/img40.JPG)
+
+### groupby
+groupby functions makes an iterator that returns keys in groups from an iterable(not clear enough see examples)
+
+![failed to upload](./images/python/img41.JPG)
+
+![failed to upload](./images/python/img42.JPG)
+
+![failed to upload](./images/python/img43.JPG)
+
+![failed to upload](./images/python/img44.JPG)
+
+![failed to upload](./images/python/img45.JPG)
+
+![failed to upload](./images/python/img46.JPG)
+
+#### infinite iterators
+```
+count, cycle, repeat
+```
+![failed to upload](./images/python/img47.JPG)
+
+![failed to upload](./images/python/img48.JPG)
+
+count will start from 10 and go to infinity the above will create an infinite loop unless a break is added
+
+[failed to upload](./images/python/img49.JPG)
+
+![failed to upload](./images/python/img50.JPG)
+
+this will create an infinite loop that will cycle the array 1,2,3,1,2,3,1,2,3.................
+
+![failed to upload](./images/python/img51.JPG)
+
+![failed to upload](./images/python/img52.JPG)
+
+it will also repeat the number given to it as argument infinite times
