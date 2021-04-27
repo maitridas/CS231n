@@ -235,6 +235,12 @@ except:
 ```
 Best Practice is except the specific errors
 
+![failed to upload](./images/python/img67.JPG)
+
+![failed to upload](./images/python/img68.JPG)
+
+![failed to upload](./images/python/img69.JPG)
+
 ## Reading From Files
 file = open("file.txt", "r") -> r stands for read, w is for write, a stands for append info at the end of the file you can't change anything in the file in this mode but can add new info, r+ is read and write
 
@@ -530,7 +536,36 @@ output - 720
 
 ![failed to upload](./images/python/img64.JPG)
 
+## defining own error
+![failed to upload](./images/python/img70.JPG)
+
+![failed to upload](./images/python/img71.JPG)
+
 ## assert
 ![failed to upload](./images/python/img65.JPG)
 
 ![failed to upload](./images/python/img66.JPG)
+
+## Logging
+python comes with powerful login module so we can simply add login to our application
+
+![failed to upload](./images/python/img72.JPG)
+
+![failed to upload](./images/python/img73.JPG)
+
+only warning error and critical are printed because by default it is set that only severity level of warning or above should be printed
+
+if we want to change it we can change the basic config and usually it's done right after importing
+
+![failed to upload](./images/python/img74.JPG)
+
+What the fuck is logging will come to it later -_-!!
+
+## jason
+```
+jason is short for javascript object notation and it is light weight data format which is used for data exchange heavily used in web application so should be comfortable with it
+```
+
+jason data format:
+
+![failed to upload](./images/python/img75.JPG)
