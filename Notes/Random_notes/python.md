@@ -456,3 +456,81 @@ this will create an infinite loop that will cycle the array 1,2,3,1,2,3,1,2,3...
 ![failed to upload](./images/python/img52.JPG)
 
 it will also repeat the number given to it as argument infinite times
+
+## Lambda funtion
+```
+lambda arguments: expression
+evaluates expression and returns the evaluated expression
+```
+```
+add10 = lambda x: x+10
+print(add10(5))
+```
+```
+mult = lambda x,y: x*y
+print(mult(2,7))
+```
+
+Lambda functions are usually used when the functions are short and one time used types or when we need to give a function argument to another function
+
+![failed to upload](./images/python/img53.JPG)
+
+![failed to upload](./images/python/img54.JPG)
+
+Usually sorted without the key argument sorts the tuple list wrt to the first element but eith the second element it will sort the list wrt the second element
+
+![failed to upload](./images/python/img55.JPG)
+
+works the same but without the lamda function
+
+![failed to upload](./images/python/img56.JPG)
+
+can also do this
+
+## map function
+```
+map(func, sequence)
+```
+![failed to upload](./images/python/img57.JPG)
+
+![failed to upload](./images/python/img58.JPG)
+
+if we don't convert to list before printing it will give a map object
+
+we can also do this using list comprehension
+```
+c = [x+2 for x in a]
+print(c)
+```
+
+## filter function
+```
+filter(func, sequence)
+func must return a true or false and filter funtion will return all the elements for which the func returns true 
+```
+![failed to upload](./images/python/img59.JPG)
+
+![failed to upload](./images/python/img60.JPG)
+
+Can do it with list comprehension too
+
+![failed to upload](./images/python/img61.JPG)
+
+## reduce function
+```
+reduce(func, sequence)
+repeatedly applies the function to the sequence and returns a single value
+```
+![failed to upload](./images/python/img62.JPG)
+
+output - 720
+
+## Errors and Exceptions
+![failed to upload](./images/python/img63.JPG)
+
+![failed to upload](./images/python/img64.JPG)
+
+## assert
+![failed to upload](./images/python/img65.JPG)
+
+![failed to upload](./images/python/img66.JPG)
