@@ -451,7 +451,7 @@ count, cycle, repeat
 
 count will start from 10 and go to infinity the above will create an infinite loop unless a break is added
 
-[failed to upload](./images/python/img49.JPG)
+![failed to upload](./images/python/img49.JPG)
 
 ![failed to upload](./images/python/img50.JPG)
 
